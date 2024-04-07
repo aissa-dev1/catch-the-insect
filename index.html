@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/main.scss" />
+    <title>Catch the insect</title>
+  </head>
+  <body class="light">
+    <main id="app" class="container">
+      <header class="start-game-header">
+        <p class="title">Catch the insect</p>
+
+        <button id="play_game_btn">Play game</button>
+      </header>
+
+      <header class="choose-insect-header hide">
+        <p class="title">What is your "favorite" insect?</p>
+
+        <section class="insect-imgs-section">
+          <div class="choose-insect-container" data-insect="fly">
+            <p>Fly</p>
+
+            <img class="fly-img" src="./fly.png" alt="fly" />
+          </div>
+
+          <div class="choose-insect-container" data-insect="spider">
+            <p>Spider</p>
+
+            <img class="spider-img" src="./spider.png" alt="spider.png" />
+          </div>
+
+          <div class="choose-insect-container" data-insect="roach">
+            <p>Roach</p>
+
+            <img class="roach-img" src="./roach.png" alt="roach" />
+          </div>
+        </section>
+      </header>
+
+      <header class="game-header hide">
+        <section class="game-options-section">
+          <div class="time-container">
+            <p>
+              Time: <span id="time_minutes_elm">00:</span
+              ><span id="time_seconds_elm">00</span>
+            </p>
+          </div>
+
+          <div class="score-container">
+            <p>Score: <span id="score_elm">0</span></p>
+          </div>
+        </section>
+
+        <section class="game-display-section"></section>
+
+        <section class="game-cursor-section">
+          <div class="gun-container hide">
+            <img class="fire-img hide" src="./fire.svg" alt="fire" />
+
+            <img class="gun-img" src="./gun.svg" alt="gun" />
+          </div>
+        </section>
+      </header>
+
+      <header class="game-over-header hide">
+        <p class="title">Game over</p>
+
+        <section class="game-info-section">
+          <div>Play time: <span id="play_time_info"></span></div>
+
+          <div>Score: <span id="game_score_info"></span></div>
+        </section>
+
+        <section class="buttons-section">
+          <button id="go_home_btn">Exit</button>
+
+          <button id="play_again_btn">Play again</button>
+        </section>
+      </header>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

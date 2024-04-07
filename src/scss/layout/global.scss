@@ -1,0 +1,24 @@
+@import "../mixins/reset/reset-spaces.scss";
+@import "../variables/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  @include reset-spaces();
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+}
+
+.light {
+  --bg-color: #fff;
+  --color: #212024;
+}
+
+.dark {
+  --bg-color: #212024;
+  --color: #fff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--color);
+}

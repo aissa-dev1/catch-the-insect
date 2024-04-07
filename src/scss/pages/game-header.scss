@@ -1,0 +1,61 @@
+@import "../mixins/flex/flex.scss";
+
+.container .game-header {
+  &.hide {
+    display: none;
+  }
+
+  .game-options-section {
+    @include flex(row, space-between, center);
+    padding: 0.5rem;
+  }
+
+  .game-display-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 32px);
+
+    .insect-container {
+      @include flex(column, center, center);
+      position: absolute;
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid $black_color;
+      cursor: pointer;
+      z-index: 5;
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      img {
+        width: 2.5rem;
+      }
+    }
+  }
+
+  .game-cursor-section {
+    .gun-container {
+      position: absolute;
+      @include flex(column, center, center);
+      gap: 0.5rem;
+      transform: scaleX(-1);
+
+      &.hide {
+        display: none;
+      }
+
+      .fire-img {
+        width: 1.5rem;
+
+        &.hide {
+          display: none;
+        }
+      }
+
+      .gun-img {
+        width: 3rem;
+      }
+    }
+  }
+}

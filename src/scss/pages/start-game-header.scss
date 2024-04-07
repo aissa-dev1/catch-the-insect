@@ -1,0 +1,34 @@
+@import "../mixins/flex/flex.scss";
+@import "../mixins/reset/reset-element.scss";
+@import "../variables/colors.scss";
+
+.container .start-game-header {
+  @include flex(column, center, center);
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &.hide {
+    display: none;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  button {
+    @include reset-element;
+    width: 50%;
+    height: 2.5rem;
+    background-color: $black_color;
+    color: $white_color;
+    cursor: pointer;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}

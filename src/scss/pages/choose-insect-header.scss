@@ -1,0 +1,53 @@
+@import "../mixins/flex/flex.scss";
+@import "../mixins/flex/flex-row.scss";
+@import "../variables/colors.scss";
+
+.container .choose-insect-header {
+  @include flex(column, center, center);
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &.hide {
+    display: none;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .insect-imgs-section {
+    @include flex-row;
+    gap: 1rem;
+
+    .choose-insect-container {
+      @include flex(column, center, center);
+      gap: 0.5rem;
+      width: 10rem;
+      height: 10rem;
+      border: 1px solid $black_color;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $black_color;
+        color: $white_color;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      .fly-img,
+      .roach-img {
+        width: 5rem;
+      }
+
+      .spider-img {
+        width: 6rem;
+      }
+    }
+  }
+}

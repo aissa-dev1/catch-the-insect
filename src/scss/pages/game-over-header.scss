@@ -1,0 +1,46 @@
+@import "../mixins/flex/flex.scss";
+@import "../mixins/flex/flex-row.scss";
+@import "../mixins/flex/flex-col.scss";
+@import "../mixins/reset/reset-element.scss";
+@import "../variables/colors.scss";
+
+.container .game-over-header {
+  @include flex(column, center, center);
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &.hide {
+    display: none;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .game-info-section {
+    @include flex-col;
+    gap: 0.5rem;
+  }
+
+  .buttons-section {
+    @include flex-row;
+    gap: 1rem;
+
+    button {
+      @include reset-element;
+      padding: 0 0.7rem;
+      height: 2.5rem;
+      background-color: $black_color;
+      color: $white_color;
+      cursor: pointer;
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}
